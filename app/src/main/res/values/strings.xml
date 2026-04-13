@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">SwipeViewPager</string>
+    <string name="order_now">Order Now!</string>
+    <string name="brochure">Brochure</string>
+    <string name="sticker">Sticker</string>
+    <string name="poster">Poster</string>
+    <string name="namecard">Namecard</string>
+    <string name="brochure_desc">Brochure is an informative paper document (often also used for advertising) that can be folded into a template</string>
+    <string name="sticker_desc">Sticker is a type of label: a piece of printed paper, plastic, vinyl, or other material with pressure sensitive adhesive on one side</string>
+    <string name="poster_desc">Poster is any piece of printed paper designed to be attached to a wall or vertical surface.</string>
+    <string name="namecard_desc">Business cards are cards bearing business information about a company or individual.</string>
 </resources>
