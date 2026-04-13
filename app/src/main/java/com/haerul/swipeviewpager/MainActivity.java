@@ -2,8 +2,9 @@ package com.haerul.swipeviewpager;
 
 import android.animation.ArgbEvaluator;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,27 +23,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         models = new ArrayList<>();
-        models.add(new Model(R.drawable.brochure, "Brochure", "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"));
-        models.add(new Model(R.drawable.sticker, "Sticker", "Sticker is a type of label: a piece of printed paper, plastic, vinyl, or other material with pressure sensitive adhesive on one side"));
-        models.add(new Model(R.drawable.poster, "Poster", "Poster is any piece of printed paper designed to be attached to a wall or vertical surface."));
-        models.add(new Model(R.drawable.namecard, "Namecard", "Business cards are cards bearing business information about a company or individual."));
+        models.add(new Model(R.drawable.brochure, getString(R.string.brochure), getString(R.string.brochure_desc)));
+        models.add(new Model(R.drawable.sticker, getString(R.string.sticker), getString(R.string.sticker_desc)));
+        models.add(new Model(R.drawable.poster, getString(R.string.poster), getString(R.string.poster_desc)));
+        models.add(new Model(R.drawable.namecard, getString(R.string.namecard), getString(R.string.namecard_desc)));
 
         adapter = new Adapter(models, this);
 
         viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(adapter);
-        viewPager.setPadding(130, 0, 130, 0);
+        viewPager.setPaddingRelative(130, 0, 130, 0);
 
         Integer[] colors_temp = {
-                getResources().getColor(R.color.color1),
-                getResources().getColor(R.color.color2),
-                getResources().getColor(R.color.color3),
-                getResources().getColor(R.color.color4)
+                ContextCompat.getColor(this, R.color.color1),
+                ContextCompat.getColor(this, R.color.color2),
+                ContextCompat.getColor(this, R.color.color3),
+                ContextCompat.getColor(this, R.color.color4)
         };
 
         colors = colors_temp;
 
-        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
